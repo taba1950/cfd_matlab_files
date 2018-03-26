@@ -1,0 +1,17 @@
+clc
+percentage = 0.01:0.01:1;
+
+for i= 1:length(percentage)
+    df1(i) = 1-(1/(1+percentage(i)));
+    df2(i) = df1(i)^2;
+    df3(i) = df1(i)^3;
+end
+figure(1)
+xlabel("discount factor")
+plot(df1,percentage)
+figure(2)
+plot(df2, percentage)
+figure(3)
+plot(df3, percentage)
+
+
