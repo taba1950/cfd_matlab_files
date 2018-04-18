@@ -1,7 +1,7 @@
 clc
 clear 'all'
 
-n = 20;
+n = 5;
 rho = 1;
 u = 2.5;
 k = 0.1;
@@ -28,8 +28,8 @@ t(1) = 1;
 t(n+2) = 0;
 
 %First element
-ae = F/2 - D;
-ap = F/2 + 3*D;
+ae = - D;
+ap = F + 3*D;
 
 a(1,1) = ap;
 a(1,2) = ae;
@@ -37,9 +37,9 @@ a(1,2) = ae;
 b(1) = (F+2*D)*t(1);
 
 %Interiour elements
-aw = -(D + F/2);
-ae = F/2 - D;
-ap = 2*D;
+aw = -(F + D);
+ae = -D;
+ap = F + 2*D;
 
 for i=2:n-1
     j = i-1;
@@ -49,8 +49,8 @@ for i=2:n-1
 end 
 
 %Last element
-ap = -F/2 + 3*D;
-aw = -F/2 - D;
+ap = F + 2*D;
+aw = -(F + D);
 
 a(n,n-1) = aw;
 a(n,n) = ap;
